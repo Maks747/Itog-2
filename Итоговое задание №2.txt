@@ -1,0 +1,52 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+            Scanner sc = new Scanner(System.in);
+            String stroka;
+            do
+            {
+                System.out.println("Введите 5 символов уравнения с одной переменной x");
+                stroka = sc.nextLine();
+                break;
+            }
+            while (stroka.length() < 9);
+            char s1 = stroka.charAt(0);
+            char s3 = stroka.charAt(2);
+            char s5 = stroka.charAt(4);
+            int a, b, c, d, e, f;
+
+            if (stroka.charAt(1) == '+' && stroka.charAt(3) == '=') {
+                if (s1 == 'x') {
+                    System.out.println("Ввод: " + s1 + '+' + s3 + '=' + s5);
+                    a = s5 - s3;
+                    System.out.println("Вывод: x=" + a);
+                } else if (s3 == 'x') {
+                    System.out.println("Ввод: " + s1 + '+' + s3 + '=' + s5);
+                    b = s5 - s1;
+                    System.out.println("Вывод: x=" + b);
+                } else if (s5 == 'x') {
+                    System.out.println("Ввод: " + s1 + '+' + s3 + '=' + s5);
+                    c = s1 + s3;
+                    System.out.println("Вывод: x=" + c);
+                }
+            }
+
+            else if ((stroka.charAt(1) == '-') && stroka.charAt(3) == '=') {
+                if (s1 == 'x') {
+                    System.out.println("Ввод: " + s1 + '-' + s3 + '=' + s5);
+                    d = s5 + s3;
+                    System.out.println("Вывод: x=" + d);
+                } else if (s3 == 'x') {
+                    System.out.println("Ввод: " + s1 + '-' + s3+ '=' + s5);
+                    e = s1 - s5;
+                    System.out.println("Вывод: x=" + e);
+                } else if (s5 == 'x') {
+                    System.out.println("Ввод: " + s1 + '-' + s3 + '=' + s5);
+                    f = s1 - s3;
+                    System.out.println("Вывод: x=" + f);
+                }
+            }
+        }
+    }
